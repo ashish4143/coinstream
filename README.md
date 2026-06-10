@@ -1,60 +1,49 @@
 # CoinStream
 
-**CoinStream** is a high-performance, real-time cryptocurrency analytics dashboard built with Next.js 16. It delivers up-to-the-second market intelligence, high-frequency price tracking, and live orderbook streams using the CoinGecko API and WebSockets, paired with interactive TradingView candlestick charts for surgical precision.
+CoinStream is an advanced, real-time cryptocurrency analytics platform designed to provide institutional-grade market intelligence. By leveraging WebSockets and REST APIs, it delivers a low-latency, high-frequency dashboard for tracking digital assets with precision.
 
-![CoinStream Dashboard](public/readme/readme-hero.webp)
+## Architecture & Technology
 
-## 🔋 Key Features
+CoinStream is built on a modern, high-performance web stack:
+- **Core Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling Engine**: Tailwind CSS v4
+- **Component Library**: shadcn/ui
+- **Financial Charting**: TradingView Lightweight Charts
+- **Data Provider**: CoinGecko API
 
-- **Live Market Dashboard**: Instant overview of global market health, including Total Market Cap, BTC & ETH dominance, and trending assets.
-- **Real-Time Data Streams**: Continuous, low-latency live price monitoring and orderbook streams powered by WebSockets.
-- **Interactive Candlestick Charts**: Professional-grade multi-timeframe OHLCV visualizations using TradingView Lightweight Charts.
-- **Advanced Token Discovery**: Comprehensive, paginated tables for market analysis with key metrics such as Price, 24h Change, and Market Cap.
-- **Smart Currency Converter**: Instantly convert coin amounts across dozens of supported fiat and cryptocurrencies.
-- **Global Search**: Unified, fast search functionality to quickly discover and navigate to any crypto asset.
+## Core Capabilities
 
-## ⚙️ Tech Stack & Architecture
+- **Real-Time Data Pipelines**: Continuous, low-latency streams for live pricing and orderbook executions via WebSockets.
+- **Precision Charting**: Multi-timeframe OHLCV visualizations utilizing TradingView's lightweight library for seamless interaction and deep market analysis.
+- **Market Intelligence**: Dynamic tracking of global metrics including Total Market Cap, BTC/ETH dominance, and trending crypto assets.
+- **Asset Discovery**: Paginated, comprehensive data tables allowing sorting and searching across thousands of digital assets.
+- **Currency Conversion**: Instantaneous calculations across fiat currencies and crypto pairs.
 
-CoinStream is engineered for speed, modularity, and a premium developer experience.
+## Development Setup
 
-- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) & [shadcn/ui](https://ui.shadcn.com/)
-- **Market Data**: [CoinGecko REST API & WebSockets](https://www.coingecko.com/)
-- **Charting**: [TradingView Lightweight Charts](https://www.tradingview.com/lightweight-charts/)
-- **Icons**: Lucide React
-
-### System Architecture Highlights
-- **Server-Side Data Fetching**: Centralized REST API calls using custom fetch wrappers and efficient query string handling.
-- **WebSocket Orchestration**: Custom React hooks manage WebSocket lifecycle, channel subscriptions (prices, trades, OHLCV), and real-time state updates.
-- **Data Merging**: Seamless integration of historical OHLC data with live WebSocket candle updates for smooth chart rendering.
-
-## 🤸 Getting Started
-
-Follow these instructions to set up and run the project locally.
+To run CoinStream locally, follow these steps:
 
 ### Prerequisites
-
-Ensure you have the following installed on your local machine:
-- [Node.js](https://nodejs.org/) (v18 or higher recommended)
-- npm or yarn
-- Git
+- Node.js (v18+)
+- npm, yarn, or pnpm
+- A valid CoinGecko API Key
 
 ### Installation
 
-1. **Clone the repository:**
+1. **Clone the repository**
    ```bash
    git clone https://github.com/your-username/coinstream.git
    cd coinstream
    ```
 
-2. **Install dependencies:**
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Configure Environment Variables:**
-   Create a `.env` file in the root directory and add your API credentials:
+3. **Configure Environment Variables**
+   Create a `.env` file at the root of the project with the following keys:
    ```env
    COINGECKO_BASE_URL=https://pro-api.coingecko.com/api/v3
    COINGECKO_API_KEY=your_rest_api_key_here
@@ -62,20 +51,13 @@ Ensure you have the following installed on your local machine:
    NEXT_PUBLIC_COINGECKO_WEBSOCKET_URL=wss://ws.coingecko.com/cable
    NEXT_PUBLIC_COINGECKO_API_KEY=your_websocket_api_key_here
    ```
-   *(Note: You can obtain API keys from the [CoinGecko API Dashboard](https://www.coingecko.com/en/api).)*
 
-4. **Run the development server:**
+4. **Start the development server**
    ```bash
    npm run dev
    ```
+   The application will be available at `http://localhost:3000`.
 
-5. **Open the app:**
-   Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
+## License
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/your-username/coinstream/issues) if you want to contribute.
-
-## 📝 License
-
-This project is open-source and available under the [MIT License](LICENSE).
+Distributed under the MIT License.
